@@ -1,0 +1,18 @@
+html{
+	font-family: 'Roboto', sans-serif !important;
+}
+
+h1{
+	color: grey;
+	font-size: 60px;
+	font-weight: 200;
+}
+
+
+.big-button{
+	font-size: 35px;
+}
+
+.btn{
+	margin: 20px;
+}
