@@ -26,3 +26,9 @@ Route::get('dashboard', 'DashboardController@index');
 Route::get('addflat', 'AddflatController@index');
 
 Route::post('addflat', 'AddflatController@add');
+
+Route::get('flatdetails', 'FlatdetailsController@index');
+
+Route::get('addrenter', 'AddrenterController@index');
+
+Route::post('addrenter', 'AddrenterController@add');

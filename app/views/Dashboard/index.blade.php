@@ -10,11 +10,7 @@
 			<h1>{{$name}} - Dashboard</h1>
 			<hr>
 			<h2>Summary</h2>
-			<li>You have {{$flatCount}} Flats</li>
-
-
+			<li><h4>You have <a href="flatdetails">{{$flatCount}} Flats</a></h4></li>
 		</div>
-
-
 	</div>
 @stop

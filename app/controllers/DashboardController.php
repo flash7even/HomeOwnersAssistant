@@ -14,12 +14,12 @@ class DashboardController extends BaseController
 			return Redirect::to('login');
 		}
 
-		$user = User::where('username', '=', $username)->first();
+		$user = User::getCurrentUser();
 
 		$param = array();
 
 		$param['name'] = $user->name;
-		$param['flatCount'] = 0;
+		$param['flatCount'] = $user->flats->count();
 
 		return View::make('Dashboard.index', $param);
 	}

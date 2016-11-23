@@ -16,7 +16,6 @@ class AddflatController extends BaseController{
 		$flat->cntrooms = Input::get('cntrooms');
 		$flat->cntwashrooms = Input::get('cntwashrooms');
 		$flat->duedate = Input::get('duedate');
-		$flat->duedate = 7;
 		$flat->owner()->associate($user);
 		$flat->save();
 

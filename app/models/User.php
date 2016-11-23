@@ -3,7 +3,7 @@
 class User extends Eloquent{
 	public function flats()
 	{
-		return $this->hasMany('flats');
+		return $this->hasMany('Flat');
 	}
 
 	public static function getCurrentUser()
