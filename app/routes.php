@@ -16,3 +16,13 @@ Route::get('/', 'HomeController@showWelcome');
 Route::get('signup', 'SignupController@showForm');
 
 Route::post('signup', 'SignupController@data');
+
+Route::get('login', 'LoginController@LoginForm');
+
+Route::post('login', 'LoginController@verify');
+
+Route::get('dashboard', 'DashboardController@index');
+
+Route::get('addflat', 'AddflatController@index');
+
+Route::post('addflat', 'AddflatController@add');

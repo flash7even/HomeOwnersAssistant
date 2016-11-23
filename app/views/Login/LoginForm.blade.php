@@ -1,27 +1,16 @@
-@extends("templates.default")
+@extends('templates.default')
 
-@section("head")
-	<title>Signup</title>
+
+@section('head')
+	<title>Log In</title>
 @stop
 
-
-@section("content")
-
+@section('content')
 	<div class="container">
 		<div class="well" style="margin:60px 100px; padding:30px 50px;">
 			<form method="post" target="">
-				<h1 class="header">Sign Up</h1>
+				<h1 class="header">Log In</h1>
 				<div class="inputs">
-					<div class="form-group label-floating">
-						<label for="i0" class="control-label">Name</label>
-						<input type="text" class="form-control" id="i0" name="name">
-					</div>
-
-					<div class="form-group label-floating">
-						<label for="i1" class="control-label">Email</label>
-		    			<input type="email" class="form-control" id="i1" name="email">
-					</div>
-
 					<div class="form-group label-floating">
 						<label for="i2" class="control-label">User Name</label>
 						<input type="text" class="form-control" id="i2" name="username">
@@ -35,7 +24,5 @@
 				<button type="submit" class="btn btn-raised teel">Submit</button>
 			</form>
 		</div>
-
 	</div>
-
 @stop
