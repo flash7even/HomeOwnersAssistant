@@ -11,6 +11,11 @@
 			<hr>
 			<h2>Summary</h2>
 			<li><h4>You have <a href="flatdetails">{{$flatCount}} Flats</a></h4></li>
+			<li><h4>You have <a href="renterdetails">{{$renterCount}} Renters</a></h4></li>
+		</div>
+		<div class="well">
+			<a href="addflat"><button class="btn btn-raised">Add Flat</button></a>
+			<a href="addrenter"><button class="btn btn-raised">Add Renter</button></a>
 		</div>
 	</div>
 @stop

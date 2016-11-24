@@ -32,3 +32,5 @@ Route::get('flatdetails', 'FlatdetailsController@index');
 Route::get('addrenter', 'AddrenterController@index');
 
 Route::post('addrenter', 'AddrenterController@add');
+
+Route::get('renterdetails', 'RenterdetailsController@index');

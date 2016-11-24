@@ -14,6 +14,9 @@
 				<h4>Number of Rooms: {{$flat->cntrooms}}</h4>
 				<h4>Number of Washrooms: {{$flat->cntwashrooms}}</h4>
 				<h4>Due Date of Payments: {{$flat->duedate}}</h4>
+				@if( $flat->renters->count() > 0 )
+					<h4><b>Renter: {{$flat->renters->first()->name}}</b>(<a href="renterdetails?id={{$flat->renters->first()->id}}">Details</a>)</h4>
+				@endif
 			</div>
 		@endforeach
 

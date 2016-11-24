@@ -20,6 +20,14 @@ class AddrenterController extends BaseController{
 		$renter->nid = Input::get('nid');
 		$renter->arrival = Input::get('arrival');
 
+		$user = User::getCurrentUser();
+
+		$renter->user()->associate($user);
+
+		$renter->save();
+
+		$renter->flats()->save(Flat::find(Input::get('flat')));
+
 		$renter->save();
 
 		return View::make('Success.success');

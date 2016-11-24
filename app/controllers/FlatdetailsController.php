@@ -10,6 +10,13 @@ class FlatdetailsController extends BaseController{
 
 		$param['flats'] = $user->flats;
 
+		$id = Input::get('id');
+
+		if(!empty($id))
+		{
+			$param['flats'] = array(Flat::find($id));
+		}
+
 		return View::make('Flatdetails.index', $param);
 	}
 

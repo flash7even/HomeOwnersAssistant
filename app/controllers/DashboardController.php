@@ -20,6 +20,7 @@ class DashboardController extends BaseController
 
 		$param['name'] = $user->name;
 		$param['flatCount'] = $user->flats->count();
+		$param['renterCount'] = $user->renters->count();
 
 		return View::make('Dashboard.index', $param);
 	}
