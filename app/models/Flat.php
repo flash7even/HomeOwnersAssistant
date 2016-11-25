@@ -1,9 +1,9 @@
 <?php
 
 class Flat extends Eloquent{
-	public function owner()
+	public function user()
 	{
-		return $this->belongsTo('user', 'user_id');
+		return $this->belongsTo('User');
 	}
 
 	public function renters()

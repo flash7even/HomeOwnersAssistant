@@ -62,6 +62,29 @@ App::error(function(Exception $exception, $code)
 |
 */
 
+
+/*
+ |--------------------------------------------------------------------------
+ | Model Not Found
+ |--------------------------------------------------------------------------
+ |
+ |
+*/
+
+use Illuminate\Database\Eloquent\ModelNotFoundException;
+ App::error(function(ModelNotFoundException $e)
+ {
+	 //return "oh";
+	 return Response::make('Not Found', 404);
+ });
+
+class AccessDenied extends Exception{}
+
+App::error(function(AccessDenied $e){
+	return Response::make('Access Denied');
+});
+
+
 App::down(function()
 {
 	return Response::make("Be right back!", 503);

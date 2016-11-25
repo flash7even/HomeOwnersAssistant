@@ -14,7 +14,11 @@ class FlatdetailsController extends BaseController{
 
 		if(!empty($id))
 		{
-			$param['flats'] = array(Flat::find($id));
+			$flat = Flat::findOrFail($id);
+			if($flat->user->id != $user->id) throw new AccessDenied;
+
+			$param['flats'] = array($flat);
+
 		}
 
 		return View::make('Flatdetails.index', $param);

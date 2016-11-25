@@ -34,3 +34,16 @@ Route::get('addrenter', 'AddrenterController@index');
 Route::post('addrenter', 'AddrenterController@add');
 
 Route::get('renterdetails', 'RenterdetailsController@index');
+
+Route::get('editrenter', 'EditrenterController@form');
+
+Route::post('editrenter', 'EditrenterController@edit');
+
+Route::get('editflat', 'EditflatController@form');
+
+Route::post('editflat', 'EditflatController@edit');
+
+Route::get('logout', function(){
+	Session::forget('username');
+	return Redirect::to('login');
+});

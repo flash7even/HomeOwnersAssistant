@@ -5,6 +5,11 @@ class LoginController extends BaseController{
 
 	public function LoginForm()
 	{
+		$username = Session::get('username');
+		if(!empty($username))
+		{
+			return Redirect::to('dashboard');
+		}
 		return View::make('Login.LoginForm');
 	}
 

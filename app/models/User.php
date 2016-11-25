@@ -13,6 +13,10 @@ class User extends Eloquent{
 
 	public static function getCurrentUser()
 	{
+		if(!Session::has('username'))
+		{
+			throw new AccessDenied;
+		}
 		return User::where('username', '=', Session::get('username'))->first();
 	}
 }
