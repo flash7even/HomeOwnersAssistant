@@ -10,7 +10,7 @@
 	<div class="container">
 		<div class="well">
 			<h1>Successfully Registered</h1>
-			<h2><a href="dashboard">Dashboard</a></h2>
+			<h2><a href="/dashboard">Dashboard</a></h2>
 		</div>
 	</div>
 @stop

@@ -4,6 +4,7 @@
 class AddflatController extends BaseController{
 	public function index()
 	{
+		User::getCurrentUser();
 		return View::make('Addflat.index');
 	}
 

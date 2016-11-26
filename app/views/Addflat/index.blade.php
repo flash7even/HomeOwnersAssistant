@@ -36,7 +36,5 @@
 				<button type="submit" class="btn btn-raised teel">Submit</button>
 			</form>
 		</div>
-
-
 	</div>
 @stop

@@ -43,6 +43,16 @@ Route::get('editflat', 'EditflatController@form');
 
 Route::post('editflat', 'EditflatController@edit');
 
+Route::get('parking', 'ParkingController@index');
+
+Route::get('parking/new', 'ParkingController@form');
+
+Route::post('parking/new', 'ParkingController@add');
+
+Route::get('parking/edit', 'ParkingController@editform');
+
+Route::post('parking/edit', 'ParkingController@edit');
+
 Route::get('logout', function(){
 	Session::forget('username');
 	return Redirect::to('login');
