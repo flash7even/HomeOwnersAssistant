@@ -16,6 +16,11 @@ class User extends Eloquent{
 		return $this->hasMany('Parking');
 	}
 
+	public function maids()
+	{
+		return $this->hasMany('Maid');
+	}
+
 	public static function getCurrentUser()
 	{
 		if(!Session::has('username'))

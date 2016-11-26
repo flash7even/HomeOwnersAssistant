@@ -10,4 +10,14 @@ class Renter extends Eloquent{
 	{
 		return $this->belongsTo('User');
 	}
+
+	public function maids()
+	{
+		return $this->belongsToMany('Maid', 'maid_renter');
+	}
+
+	public function parking()
+	{
+		return $this->hasMany('Parking');
+	}
 }

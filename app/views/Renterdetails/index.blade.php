@@ -18,7 +18,15 @@
 				<h4>NID: {{$renter->nid}}</h4>
 				<h4>Arrival Date: {{$renter->arrival}}</h4>
 				@if($renter->flats->count() > 0)
-					<h4>Pays for Flat Rent:<b> {{ $renter->flats->first()->rent }}</b> <a href="flatdetails?id={{$renter->flats->first()->id}}">(Details...)</a></h4>
+					<h4>Pays for Flat Rent:<b> {{ $renter->flats->first()->rent }}</b> <small><a href="flatdetails?id={{$renter->flats->first()->id}}">Details</a></small></h4>
+				@endif
+
+				@if($renter->parking->count() > 0)
+					<h4>Car Name: {{$renter->parking->first()->carname}} <small><a href="parking?id={{$renter->parking->first()->id}}">Details</a></small></h4>
+				@endif
+
+				@if($renter->maids->count() > 0)
+					<h4>Maid Name: {{$renter->maids->first()->name}} <small><a href="maid?id={{$renter->maids->first()->id}}">Details</a></small></h4>
 				@endif
 			</div>
 

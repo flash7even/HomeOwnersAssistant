@@ -10,6 +10,10 @@ class ParkingController extends BaseController{
 
 		$param['parkings'] = $parkings;
 
+		$id = Input::get('id');
+		if(!empty($id))
+		$param['parkings'] = array( Parking::findOrFail($id) );
+
 		return View::make('Parking.index', $param);
 	}
 
