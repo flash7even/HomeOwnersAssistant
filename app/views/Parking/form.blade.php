@@ -12,6 +12,11 @@
 				<div class="inputs">
 
 					<div class="form-group label-floating">
+						<label for="i0" class="control-label">Car Name</label>
+						<input type="text" class="form-control" id="i0" name="carname">
+					</div>
+
+					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Flat ID</label>
 						<!--<input type="text" class="form-control" id="i0" name="flat">-->
 						<select class="form-control" name="flat">

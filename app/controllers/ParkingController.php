@@ -48,6 +48,8 @@ class ParkingController extends BaseController{
 
 		$parking->license = Input::get('license');
 
+		$parking->carname = Input::get('carname');
+
 		$parking->save();
 
 		return View::make('Success.success');
@@ -108,6 +110,8 @@ class ParkingController extends BaseController{
 		}
 
 		$parking->user()->associate($user);
+
+		$parking->carname = Input::get('carname');
 
 		$parking->license = Input::get('license');
 

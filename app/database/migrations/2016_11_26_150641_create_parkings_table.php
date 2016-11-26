@@ -15,6 +15,7 @@ class CreateParkingsTable extends Migration {
 		Schema::create('parkings', function(Blueprint $table)
 		{
 			$table->increments('id');
+			$table->string('carname');
 			$table->integer('flat_id')->unsigned();
 			$table->foreign('flat_id')->references('id')->on('flats');
 			$table->integer('renter_id')->unsigned();
