@@ -20,4 +20,28 @@ class Renter extends Eloquent{
 	{
 		return $this->hasMany('Parking');
 	}
+
+	public function payments()
+	{
+		return $this->hasMany('Payment');
+	}
+
+	public function hasPaid()
+	{
+		$payment = Payment::where('renter_id', '=', $this->id);
+		if($payment->count() == 0) return false;
+		
+		$month = date("m");
+		$year = date("Y");
+		$payment = $payment->where('month', '=', $month)->where('year', '=', $year);
+		if($payment->count())
+		{
+			return $payment->first()->amount;
+		}
+		else
+		{
+			return false;
+		}
+		
+	}
 }

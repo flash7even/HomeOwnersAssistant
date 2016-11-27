@@ -18,6 +18,7 @@ class RenterdetailsController extends BaseController{
 			$param['renters'] = array(Renter::find($id));
 		}
 
+
 		return View::make('Renterdetails.index', $param);
 	}
 }

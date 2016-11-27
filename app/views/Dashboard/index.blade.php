@@ -18,6 +18,7 @@
 			<a href="addflat"><button class="btn btn-raised">Add Flat</button></a>
 			<a href="addrenter"><button class="btn btn-raised">Add Renter</button></a>
 			<a href="parking/new"><button class="btn btn-raised">Add Car Parking Info</button></a>
+			<a href="maid/new"><button class="btn btn-raised">Add Maid Info</button></a>
 		</div>
 	</div>
 @stop

@@ -28,6 +28,8 @@
 				@if($renter->maids->count() > 0)
 					<h4>Maid Name: {{$renter->maids->first()->name}} <small><a href="maid?id={{$renter->maids->first()->id}}">Details</a></small></h4>
 				@endif
+				<hr>
+				<h4>Paid For Current Month: <b>{{$renter->hasPaid()?$renter->hasPaid():"No"}}</b></h4>
 			</div>
 
 		@endforeach

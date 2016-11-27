@@ -63,6 +63,11 @@ Route::get('maid/edit', 'MaidController@editform');
 
 Route::post('maid/edit', 'MaidController@edit');
 
+Route::get('payment/new', 'PaymentController@form');
+
+Route::post('payment/new', 'PaymentController@add');
+
+
 Route::get('logout', function(){
 	Session::forget('username');
 	return Redirect::to('login');
