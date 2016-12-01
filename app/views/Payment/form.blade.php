@@ -16,7 +16,7 @@
 						<label for="i0" class="control-label">Renter's Name</label>
 						<select type="text" class="form-control" id="i0" name="renter">
 							@foreach($renters as $renter)
-								<option value="{{$renter->id}}">{{$renter->name}}</option>
+								<option value="{{$renter->id}}" @if($id == $renter->id) selected @endif>{{$renter->name}}</option>
 							@endforeach
 						</select>
 					</div>
@@ -27,7 +27,16 @@
 							<?php
 								for($i=1; $i<=12; $i++)
 								{
-									echo "<option value='".$i."'> ".$i."</option>";
+									echo "<option value='";
+									echo $i;
+									echo "'";
+									if($i == date('m'))
+									{
+										echo "selected";
+									}
+									echo ">";
+									echo $i;
+									echo "</option>";
 								}
 							?>
 						</select>
@@ -39,7 +48,17 @@
 							<?php
 								for($i=2010; $i<=2020; $i++)
 								{
-									echo "<option value='".$i."'> ".$i."</option>";
+									echo "<option value='";
+									echo $i;
+									echo "'";
+
+									if($i == date('Y'))
+									{
+										echo "selected";
+									}
+									echo ">";
+									echo $i;
+									echo "</option>";
 								}
 							?>
 						</select>

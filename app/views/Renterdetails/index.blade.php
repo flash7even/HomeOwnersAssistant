@@ -29,7 +29,9 @@
 					<h4>Maid Name: {{$renter->maids->first()->name}} <small><a href="maid?id={{$renter->maids->first()->id}}">Details</a></small></h4>
 				@endif
 				<hr>
-				<h4>Paid For Current Month: <b>{{$renter->hasPaid()?$renter->hasPaid():"No"}}</b></h4>
+
+				<h4 style="display: inline">Paid For Current Month: <b>{{$renter->hasPaid()?$renter->hasPaid():"No"}}</b></h4> &bull; <a href="/payment/new?id={{$renter->id}}"><button class="btn btn-raised">Add Payment</button></a>
+				
 			</div>
 
 		@endforeach

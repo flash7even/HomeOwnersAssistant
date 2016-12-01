@@ -7,6 +7,10 @@ class PaymentController extends BaseController{
 
 		$param['renters'] = $user->renters;
 
+		
+		$param['id'] = Input::get('id');
+		
+
 		return View::make('Payment.form', $param);
 	}
 
