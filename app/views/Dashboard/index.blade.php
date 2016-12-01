@@ -7,8 +7,10 @@
 @section('content')
 	<div class="container">
 		<div class="well">
+			<!--
 			<h1>{{$name}} - Dashboard</h1>
 			<hr>
+			-->
 			<h2>Summary</h2>
 			<li><h4>You have <a href="flatdetails">{{$flatCount}} Flats</a></h4></li>
 			<li><h4>You have <a href="renterdetails">{{$renterCount}} Renters</a></h4></li>
@@ -19,6 +21,7 @@
 			<a href="addrenter"><button class="btn btn-raised">Add Renter</button></a>
 			<a href="parking/new"><button class="btn btn-raised">Add Car Parking Info</button></a>
 			<a href="maid/new"><button class="btn btn-raised">Add Maid Info</button></a>
+			<a href="payment/new"><button class="btn btn-raised">Add Payment Info</button></a>
 		</div>
 	</div>
 @stop

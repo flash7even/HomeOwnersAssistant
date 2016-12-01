@@ -48,6 +48,44 @@
 	</head>
 
 	<body>
+	@if(!in_array(Request::path(), array('/', 'login', 'signup')))
+		<div class="navbar navbar-default">
+  			<div class="container-fluid">
+    			<div class="navbar-header">
+      				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+        				<span class="icon-bar"></span>
+      				</button>
+      				<a class="navbar-brand" href="javascript:void(0)">{{User::getCurrentUser()->name}}</a>
+      				
+    			</div>
+    			<div class="navbar-collapse collapse navbar-responsive-collapse">
+	      			<ul class="nav navbar-nav">
+	      				<?php
+	      					$menus = array(
+	      								array(
+	      									'url'	=> '/dashboard',
+	      									'text'	=> 'Dashboard'
+	      								),
+	      								array(
+	      									'url'	=> '/renterdetails',
+	      									'text'	=> 'Renter Details'
+	      								),
+	      								array(
+	      									'url'	=> '/flatdetails',
+	      									'text'	=> 'Flat Details'
+	      								)
+	      							)
+	      				?>
+	      				@foreach($menus as $menu)
+	      					<li @if(('/'.Request::path()) == $menu['url']) class="active" @endif ><a href="{{$menu['url']}}" >{{$menu['text']}}</a></li>
+	      				@endforeach
+	        		</ul>
+        		</div>
+        	</div>
+        </div>
+	@endif
 	@yield('content')
 	</body>
 </html>

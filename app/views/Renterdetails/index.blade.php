@@ -9,7 +9,7 @@
 	<div class="container">
 		@foreach($renters as $renter)
 			<div class="well">
-				<h4>Name: {{$renter->name}}</h4>
+				<h4>Name: {{$renter->name}} <small><a href="editrenter?id={{$renter->id}}">Edit</a></small></h4>
 				<h4>Gender: {{$renter->gender}}</h4>
 				<h4>Age: {{$renter->age}}</h4>
 				<h4>Profession: {{$renter->profession}}</h4>
