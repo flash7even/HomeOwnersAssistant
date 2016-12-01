@@ -79,6 +79,10 @@
 	      								array(
 	      									'url'	=> '/flatdetails',
 	      									'text'	=> 'Flat Details'
+	      								),
+	      								array(
+	      									'url'	=>'/parking',
+	      									'text'	=>'Parking Details'
 	      								)
 	      							)
 	      				?>

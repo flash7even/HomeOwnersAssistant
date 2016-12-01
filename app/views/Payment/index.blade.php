@@ -20,7 +20,7 @@
 					@foreach($payments as $key=>$payment)
 						<tr>
 							<th scope="row">{{$key+1}}</th>
-							<td>{{$payment->created_at}}</td>
+							<td>{{explode(' ', $payment->created_at)[0]}}</td>
 							<td>{{$payment->renter->name}}</td>
 							<td>{{$payment->amount}}</td>
 						</tr>
