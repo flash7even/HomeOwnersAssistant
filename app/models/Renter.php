@@ -36,7 +36,8 @@ class Renter extends Eloquent{
 		$payment = $payment->where('month', '=', $month)->where('year', '=', $year);
 		if($payment->count())
 		{
-			return $payment->first()->amount;
+			//return $payment->first()->amount;
+			return $payment->sum('amount');
 		}
 		else
 		{

@@ -69,6 +69,10 @@
 	      									'text'	=> 'Dashboard'
 	      								),
 	      								array(
+	      									'url'	=>'/payment/all',
+	      									'text'	=>'Payment Details'
+	      								),
+	      								array(
 	      									'url'	=> '/renterdetails',
 	      									'text'	=> 'Renter Details'
 	      								),

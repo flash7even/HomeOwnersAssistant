@@ -63,6 +63,8 @@ Route::get('maid/edit', 'MaidController@editform');
 
 Route::post('maid/edit', 'MaidController@edit');
 
+Route::get('payment/all/{month?}/{year?}', 'PaymentController@index');
+
 Route::get('payment/new', 'PaymentController@form');
 
 Route::post('payment/new', 'PaymentController@add');
