@@ -117,4 +117,22 @@ class RenterController extends BaseController{
 
 		return View::make('Success.success');
 	}
+
+	public function left($id)
+	{
+		$user = User::getCurrentUser();
+
+		$renter = Renter::findOrFail($id);
+
+		if($renter->user->id != $user->id)
+		{
+			throw new AccessDenied;
+		}
+
+		$renter->departure = date('Y-m-d');
+
+		$renter->save();
+
+		return View::make('Success.success');
+	}
 }

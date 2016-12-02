@@ -59,6 +59,8 @@ Route::post('flat/edit/{id}', array('as' => 'flateditsubmit', 'uses' => 'FlatCon
  
  Route::post('renter/edit/{id}', array('as' =>'rentereditsubmit', 'uses' => 'RenterController@editOnSubmit'));
 
+ Route::get('renter/edit/{id}/left', array('as' => 'renterleft', 'uses' => 'RenterController@left'));
+
 /*
  |--------------------------------------------------------------------------
  | Parking Routes
@@ -78,7 +80,7 @@ Route::post('parking/edit/{id}', array('as' => 'parkingeditsubmit', 'uses' => 'P
 
 /*
  |--------------------------------------------------------------------------
- | Parking Routes
+ | Maid Routes
  |--------------------------------------------------------------------------
  */
 
@@ -94,7 +96,7 @@ Route::post('maid/edit/{id}', array('as' => 'maideditsubmit', 'uses' => 'MaidCon
 
 /*
  |--------------------------------------------------------------------------
- | Parking Routes
+ | Payment Routes
  |--------------------------------------------------------------------------
  */
 

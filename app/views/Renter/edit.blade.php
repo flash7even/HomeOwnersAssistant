@@ -67,8 +67,8 @@
 			</form>
 			<hr>
 			<center>
-				<a href="?left=1">
-					<button class="btn btn-raised btn-danger">Delete</button>
+				<a href="{{URL::route('renterleft', $renter->id)}}">
+					<button class="btn btn-raised btn-danger">Renter Left Flat</button>
 				</a>
 			</center>
 		</div>
