@@ -17,6 +17,10 @@ class HomeController extends BaseController {
 
 	public function showWelcome()
 	{
+		if(Session::has('username'))
+		{
+			return Redirect::to('dashboard');
+		}
 		return View::make('home');
 	}
 

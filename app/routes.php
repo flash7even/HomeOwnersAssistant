@@ -107,5 +107,5 @@ Route::post('payment/new/{unused?}', array('as' => 'paymentsave', 'uses' => 'Pay
 
 Route::get('logout', array('as' => 'logout', function(){
 	Session::forget('username');
-	return Redirect::to('login');
+	return Redirect::to('/');
 }));

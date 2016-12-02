@@ -7,6 +7,10 @@ class SignupController extends BaseController
 {
 	public function showForm()
 	{
+		if(Session::has('username'))
+		{
+			return Redirect::to('dashboard');
+		}
 		return View::make("Signup.SignupForm");
 	}
 
