@@ -7,3 +7,7 @@ h1{
 	font-size: 60px;
 	font-weight: 200;
 }
+
+h1, h2, h3{
+	color: grey;
+}

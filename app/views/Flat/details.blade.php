@@ -9,7 +9,8 @@
 
 		@foreach($flats as $flat)
 			<div class="well">
-				<h2>Flat ID: {{$flat->id}}<small>  <a href="{{URL::route('flatedit', $flat->id)}}">Edit Flat</a></small></h2>
+				<h3>Flat Name: {{$flat->name}}&bull;<small>  <a href="{{URL::route('flatedit', $flat->id)}}">Edit</a></small></h3>
+				<hr>
 				<h4>Rent: {{$flat->rent}}</h4>
 				<h4>Number of Rooms: {{$flat->cntrooms}}</h4>
 				<h4>Number of Washrooms: {{$flat->cntwashrooms}}</h4>

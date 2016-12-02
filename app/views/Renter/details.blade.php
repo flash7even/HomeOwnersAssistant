@@ -18,7 +18,7 @@
 				<h4>NID: {{$renter->nid}}</h4>
 				<h4>Arrival Date: {{$renter->arrival}}</h4>
 				@if($renter->flats->count() > 0)
-					<h4>Pays for Flat Rent:<b> {{ $renter->flats->first()->rent }}</b> <small><a href="{{URL::route('flatdetails', $renter->flats->first()->id)}}">Details</a></small></h4>
+					<h4>Flat Name:<b> {{ $renter->flats->first()->name }}</b> <small><a href="{{URL::route('flatdetails', $renter->flats->first()->id)}}">Details</a></small></h4>
 				@endif
 
 				@if($renter->parking->count() > 0)

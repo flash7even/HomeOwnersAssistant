@@ -17,10 +17,10 @@
 					</div>
 
 					<div class="form-group label-floating">
-						<label for="i0" class="control-label">Flat ID</label>
+						<label for="i0" class="control-label">Flat</label>
 						<select class="form-control" name="flat">
 							@foreach($flats as $flat)
-								<option @if($flat->id == $parking->flat->id) selected @endif>{{$flat->id}}</option>
+								<option value="{{$flat->id}}" @if($flat->id == $parking->flat->id) selected @endif>{{$flat->name}}</option>
 							@endforeach
 						</select>
 					</div>

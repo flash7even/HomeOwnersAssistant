@@ -13,6 +13,11 @@
 				<div class="inputs">
 
 					<div class="form-group label-floating">
+						<label for="i0" class="control-label">Name</label>
+						<input type="text" class="form-control" id="i0" name="name">
+					</div>
+
+					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Rent</label>
 						<input type="text" class="form-control" id="i0" name="rent">
 					</div>

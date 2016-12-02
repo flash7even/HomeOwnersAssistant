@@ -33,6 +33,7 @@ class FlatController extends BaseController{
 		$user = User::getCurrentUser();
 
 		$flat = new Flat;
+		$flat->name = Input::get('name');
 		$flat->rent = Input::get('rent');
 		$flat->cntrooms = Input::get('cntrooms');
 		$flat->cntwashrooms = Input::get('cntwashrooms');
@@ -71,6 +72,7 @@ class FlatController extends BaseController{
 
 		}
 
+		$flat->name = Input::get('name');
 		$flat->rent = Input::get('rent');
 		$flat->cntrooms = Input::get('cntrooms');
 		$flat->cntwashrooms = Input::get('cntwashrooms');
