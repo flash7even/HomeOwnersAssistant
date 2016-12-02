@@ -67,8 +67,7 @@
 			</form>
 			<hr>
 			<center>
-			{{Request::full()}}
-				<a href="?delte=1">
+				<a href="?left=1">
 					<button class="btn btn-raised btn-danger">Delete</button>
 				</a>
 			</center>

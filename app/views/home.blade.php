@@ -22,8 +22,9 @@
 
 		<div style="padding-top:100px">
 			<center>
-				<button class="btn btn-lg btn-raised"><a href="login">Sign in</a></button>
-				<button class="btn btn-lg btn-raised"><a href="signup">Sign Up</a></button>
+				<a href="login"><button class="btn btn-lg btn-raised">Sign in</button></a>
+				&bull;
+				<a href="signup"><button class="btn btn-lg btn-raised">Sign Up</button></a>
 			</center>
 		</div>
 	</div>

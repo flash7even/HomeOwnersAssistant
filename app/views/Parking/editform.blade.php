@@ -1,14 +1,14 @@
 @extends('templates.default')
 
 @section('head')
-<title>Add/Edit Parking Data</title>
+<title>Edit Parking Data</title>
 @stop
 
 @section('content')
 	<div class="container">
 		<div class="well" style="margin:60px 100px; padding:30px 50px;">
 			<form method="post" target="">
-				<h1 class="header">Add a Parking</h1>
+				<h1 class="header">Edit Parking Info</h1>
 				<div class="inputs">
 
 					<div class="form-group label-floating">

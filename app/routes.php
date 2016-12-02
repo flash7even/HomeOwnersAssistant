@@ -23,35 +23,60 @@ Route::post('login', 'LoginController@verify');
 
 Route::get('dashboard', 'DashboardController@index');
 
-Route::get('addflat', 'AddflatController@index');
+// ---------
 
-Route::post('addflat', 'AddflatController@add');
+/*
+ |--------------------------------------------------------------------------
+ | Flat Routes
+ |--------------------------------------------------------------------------
+ */
 
-Route::get('flatdetails', 'FlatdetailsController@index');
+Route::get('flat/details/{id?}', array('as' => 'flatdetails', 'uses' => 'FlatController@details' ));
 
-Route::get('addrenter', 'AddrenterController@index');
+Route::get('flat/add', array('as' => 'flatadd', 'uses' => 'FlatController@add'));
 
-Route::post('addrenter', 'AddrenterController@add');
+Route::post('flat/add', array('as' => 'flatsave', 'uses' => 'FlatController@addOnSubmit'));
 
-Route::get('renterdetails', 'RenterdetailsController@index');
+Route::get('flat/edit/{id}', array('as' =>'flatedit', 'uses' =>'FlatController@edit'));
 
-Route::get('editrenter', 'EditrenterController@form');
+Route::post('flat/edit/{id}', array('as' => 'flateditsubmit', 'uses' => 'FlatController@editOnSubmit'));
 
-Route::post('editrenter', 'EditrenterController@edit');
 
-Route::get('editflat', 'EditflatController@form');
 
-Route::post('editflat', 'EditflatController@edit');
+/*
+ |--------------------------------------------------------------------------
+ | Renter Routes
+ |--------------------------------------------------------------------------
+ */
 
-Route::get('parking', 'ParkingController@index');
+ Route::get('renter/details/{id?}', array('as' => 'renterdetails', 'uses' => 'RenterController@details'));
 
-Route::get('parking/new', 'ParkingController@form');
+ Route::get('renter/add', array('as' => 'renteradd', 'uses' => 'RenterController@add'));
+
+ Route::post('renter/add', array('as' => 'rentersave', 'uses' => 'RenterController@addOnSubmit'));
+
+ Route::get('renter/edit/{id}', array('as' => 'renteredit', 'uses' => 'RenterController@edit'));
+ 
+ Route::post('renter/edit/{id}', array('as' =>'rentereditsubmit', 'uses' => 'RenterController@editOnSubmit'));
+
+/*
+ |--------------------------------------------------------------------------
+ | Parking Routes
+ |--------------------------------------------------------------------------
+ */
+
+Route::get('parking/details/{id?}', array('as' => 'parkingdetails', 'uses' => 'ParkingController@details'));
+
+Route::get('parking/new', array('as' => 'parkingadd', 'uses' => 'ParkingController@form'));
 
 Route::post('parking/new', 'ParkingController@add');
 
-Route::get('parking/edit', 'ParkingController@editform');
+Route::get('parking/edit/{id}', array('as' => 'parkingedit', 'uses' => 'ParkingController@editform'));
 
-Route::post('parking/edit', 'ParkingController@edit');
+Route::post('parking/edit/{id}', 'ParkingController@edit');
+
+
+//------
 
 Route::get('maid', 'MaidController@index');
 

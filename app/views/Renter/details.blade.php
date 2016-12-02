@@ -9,7 +9,7 @@
 	<div class="container">
 		@foreach($currentrenters as $renter)
 			<div class="well">
-				<h4>Name: {{$renter->name}} <small><a href="editrenter?id={{$renter->id}}">Edit</a></small></h4>
+				<h4>Name: {{$renter->name}} <small><a href="{{URL::route('renteredit', $renter->id)}}">Edit</a></small></h4>
 				<h4>Gender: {{$renter->gender}}</h4>
 				<h4>Age: {{$renter->age}}</h4>
 				<h4>Profession: {{$renter->profession}}</h4>
@@ -18,7 +18,7 @@
 				<h4>NID: {{$renter->nid}}</h4>
 				<h4>Arrival Date: {{$renter->arrival}}</h4>
 				@if($renter->flats->count() > 0)
-					<h4>Pays for Flat Rent:<b> {{ $renter->flats->first()->rent }}</b> <small><a href="flatdetails?id={{$renter->flats->first()->id}}">Details</a></small></h4>
+					<h4>Pays for Flat Rent:<b> {{ $renter->flats->first()->rent }}</b> <small><a href="{{URL::route('flatdetails', $renter->flats->first()->id)}}">Details</a></small></h4>
 				@endif
 
 				@if($renter->parking->count() > 0)

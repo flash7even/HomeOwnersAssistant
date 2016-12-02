@@ -14,7 +14,10 @@ class EditrenterController extends BaseController{
 			throw new AccessDenied;
 		}
 
-		return View::make('Editrenter.form', array('renter' => $renter, 'flats' => $user->flats));
+		$param['renter'] = $renter;
+		$param['flats'] = $user->flats;
+
+		return View::make('Editrenter.form', $param);
 	}
 
 	public function edit()

@@ -2,7 +2,7 @@
 
 class ParkingController extends BaseController{
 
-	public function index()
+	public function details($id = -1)
 	{
 		$user = User::getCurrentUser();
 
@@ -10,9 +10,10 @@ class ParkingController extends BaseController{
 
 		$param['parkings'] = $parkings;
 
-		$id = Input::get('id');
-		if(!empty($id))
-		$param['parkings'] = array( Parking::findOrFail($id) );
+		if($id != -1)
+		{
+			$param['parkings'] = array( Parking::findOrFail($id) );
+		}
 
 		return View::make('Parking.index', $param);
 	}
@@ -59,13 +60,9 @@ class ParkingController extends BaseController{
 		return View::make('Success.success');
 	}
 
-	public function editform()
+	public function editform($id)
 	{
 		$user = User::getCurrentUser();
-
-		$id = Input::get('id');
-
-		if(empty($id)) throw new Exception("Error Processing Request", 1);
 
 		$parking = Parking::findOrFail($id);
 
@@ -84,13 +81,9 @@ class ParkingController extends BaseController{
 		
 	}
 
-	public function edit()
+	public function edit($id)
 	{
 		$user = User::getCurrentUser();
-
-		$id = Input::get('id');
-		if(empty($id)) throw new Exception("Error Processing Request", 1);
-		
 
 		$parking = Parking::findOrFail($id);
 

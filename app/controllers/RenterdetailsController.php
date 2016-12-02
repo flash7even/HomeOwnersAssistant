@@ -9,7 +9,7 @@ class RenterdetailsController extends BaseController{
 		$user = User::getCurrentUser();
 
 		$param = array();
-		$param['renters'] = $user->renters;
+		$param['currentrenters'] = $user->renters()->where('departure', '=', '0000-00-00')->get();
 
 		$id = Input::get('id');
 

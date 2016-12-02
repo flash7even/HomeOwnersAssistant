@@ -73,15 +73,15 @@
 	      									'text'	=>'Payment Details'
 	      								),
 	      								array(
-	      									'url'	=> '/renterdetails',
+	      									'url'	=> '/renter/details',
 	      									'text'	=> 'Renter Details'
 	      								),
 	      								array(
-	      									'url'	=> '/flatdetails',
+	      									'url'	=> '/flat/details',
 	      									'text'	=> 'Flat Details'
 	      								),
 	      								array(
-	      									'url'	=>'/parking',
+	      									'url'	=>'/parking/details',
 	      									'text'	=>'Parking Details'
 	      								)
 	      							)
