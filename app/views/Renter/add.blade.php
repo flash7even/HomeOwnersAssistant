@@ -51,7 +51,7 @@
 						<label for="i0" class="control-label">Flat</label>
 						<select name="flat" class="form-control">
 							@foreach($flats as $flat)
-								<option>{{$flat->id}}</option>
+								<option value="{{$flat->id}}">{{$flat->name}}</option>
 							@endforeach
 						</select>
 					</div>

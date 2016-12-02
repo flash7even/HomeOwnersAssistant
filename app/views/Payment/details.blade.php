@@ -25,15 +25,21 @@
 							<td>{{$payment->amount}}</td>
 						</tr>
 					@endforeach
+						<tr>
+							<th scope="row">#</th>
+							<td></td>
+							<td><b>Total</b></td>
+							<td><b>{{$payments->sum('amount')}}</b></td>
+						</tr>
 				</tbody>
 			</table>
 
 			<ul class="pager">
 				<li class="previous">
-					<a href="/payment/all/{{$prev['month']}}/{{$prev['year']}}" aria-label="Previous"><b>Previous Month</b></a>
+					<a href="{{URL::route('paymentdetails', array($prev['month'], $prev['year']))}}" aria-label="Previous"><b>Previous Month</b></a>
 				</li>
 				<li class="next">
-					<a href="/payment/all/{{$next['month']}}/{{$next['year']}}" aria-label="Next"><b>Next Month</b></a>
+					<a href="{{URL::route('paymentdetails', array($next['month'], $next['year']))}}" aria-label="Next"><b>Next Month</b></a>
 				</li>
 			</ul>
 

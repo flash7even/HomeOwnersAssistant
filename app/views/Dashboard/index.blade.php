@@ -1,7 +1,7 @@
 @extends('templates.default')
 
 @section('head')
-	<title>Dashboard || {{$name}}</title>
+	<title>Dashboard &bull; {{$name}}</title>
 @stop
 
 @section('content')

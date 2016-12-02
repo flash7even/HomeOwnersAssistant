@@ -6,7 +6,7 @@
 
 @section('content')
 	<div class="container" style="padding:20px;">
-
+		<!--
 		@foreach($flats as $flat)
 			<div class="well">
 				<h3>Flat Name: {{$flat->name}}&bull;<small>  <a href="{{URL::route('flatedit', $flat->id)}}">Edit</a></small></h3>
@@ -19,6 +19,48 @@
 					<h4><b>Renter: {{$flat->renters->first()->name}}</b>(<a href="{{URL::route('renterdetails', $flat->renters->first()->id)}}">Details</a>)</h4>
 				@endif
 			</div>
+		@endforeach
+		-->
+
+		@foreach($flats as $flat)
+			<div class="well">
+				<h1> {{$flat->name}} <small> &bull; <a href="{{URL::route('flatedit', $flat->id)}}">Edit</a></small></h1>
+
+				<table class="table table-striped">
+					<tbody>
+							<tr>
+								<td>Rent</td>
+								<td>{{$flat->rent}}</td>
+							</tr>
+							<tr>
+								<td>Number of Rooms</td>
+								<td>{{$flat->cntrooms}}</td>
+							</tr>
+							<tr>
+								<td>Number of Washrooms</td>
+								<td>{{$flat->cntwashrooms}}</td>
+							</tr>
+							<tr>
+								<td>Due Date of Payments</td>
+								<td>{{$flat->duedate}}</td>
+							</tr>
+							@if( $flat->renters->count() > 0 )
+								<tr>
+									<td>Renter:</td>
+									<td>
+										@foreach($flat->renters as $key=>$renter)
+											@if($key)
+												&bull;
+											@endif
+											<a href="{{URL::route('renterdetails', $renter->id)}}">{{$renter->name}}</a>
+										@endforeach
+									</td>
+								</tr>
+							@endif
+					</tbody>
+				</table>
+			</div>
+
 		@endforeach
 
 	</div>
