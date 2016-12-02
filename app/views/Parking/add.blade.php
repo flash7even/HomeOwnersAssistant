@@ -1,7 +1,7 @@
 @extends('templates.default')
 
 @section('head')
-<title>Add/Edit Parking Data</title>
+<title>Add Parking Data</title>
 @stop
 
 @section('content')
@@ -18,7 +18,6 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Flat ID</label>
-						<!--<input type="text" class="form-control" id="i0" name="flat">-->
 						<select class="form-control" name="flat">
 							@foreach($flats as $flat)
 								<option>{{$flat->id}}</option>

@@ -9,8 +9,7 @@
 @section('content')
 	<div class="container">
 		<div class="well">
-			<h1>Successfully Registered</h1>
-			<h2><a href="/dashboard">Dashboard</a></h2>
+			<center><h1>Operation Successful!</h1></center>
 		</div>
 	</div>
 @stop

@@ -56,7 +56,7 @@ class FlatController extends BaseController{
 
 		$param['flat'] = $flat;
 
-		return View::make('Editflat.form', $param);
+		return View::make('Flat.edit', $param);
 	}
 
 	public function editOnSubmit($id)

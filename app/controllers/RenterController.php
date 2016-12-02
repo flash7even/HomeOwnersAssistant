@@ -12,7 +12,7 @@ class RenterController extends BaseController{
 
 		if($id != -1)
 		{
-			$param['currentrenters'] = array(Renter::find($id));
+			$param['currentrenters'] = array(Renter::findOrFail($id));
 		}
 
 

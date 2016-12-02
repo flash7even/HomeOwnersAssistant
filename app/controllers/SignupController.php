@@ -31,7 +31,7 @@ class SignupController extends BaseController
 		else
 		{
 			$user->save();
-			return View::make('Signup.success');
+			return View::make('Success.success');
 		}
 	}
 }

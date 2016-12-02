@@ -20,8 +20,8 @@
 			<a href="{{URL::route('flatadd')}}"><button class="btn btn-raised">Add Flat</button></a>
 			<a href="{{URL::route('renteradd')}}"><button class="btn btn-raised">Add Renter</button></a>
 			<a href="{{URL::route('parkingadd')}}"><button class="btn btn-raised">Add Car Parking Info</button></a>
-			<a href="maid/new"><button class="btn btn-raised">Add Maid Info</button></a>
-			<a href="payment/new"><button class="btn btn-raised">Add Payment Info</button></a>
+			<a href="{{URL::route('maidadd')}}"><button class="btn btn-raised">Add Maid Info</button></a>
+			<a href="{{URL::route('paymentadd')}}"><button class="btn btn-raised">Add Payment Info</button></a>
 		</div>
 	</div>
 @stop

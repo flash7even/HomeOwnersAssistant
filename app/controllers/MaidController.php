@@ -2,32 +2,35 @@
 
 class MaidController extends BaseController{
 
-	public function index()
+	public function details($id = -1)
 	{
 		$user = User::getCurrentUser();
 
-		$id = Input::get('id');
-
 		$param['maids'] = $user->maids;
 
-		if(!empty($id))
+		if($id != -1)
 		{
 			$param['maids'] = array(Maid::findOrFail($id));
+			if($param['maids'][0]->user->id != $user->id)
+			{
+				throw new AccessDenied;
+				
+			}
 		}
 
-		return View::make('Maid.index', $param);
+		return View::make('Maid.details', $param);
 	}
 
-	public function form()
+	public function add()
 	{
 		$user = User::getCurrentUser();
 
 		$param['renters'] = $user->renters;
 
-		return View::make('Maid.form', $param);
+		return View::make('Maid.add', $param);
 	}
 
-	public function add()
+	public function addOnSubmit()
 	{
 		$user = User::getCurrentUser();
 
@@ -52,22 +55,34 @@ class MaidController extends BaseController{
 		return View::make('Success.success');
 	}
 
-	public function editform()
+	public function edit($id)
 	{
 		$user = User::getCurrentUser();
 
 		$param['renters'] = $user->renters;
 
-		$param['maid'] = Maid::findOrFail(Input::get('id'));
+		$param['maid'] = Maid::findOrFail($id);
 
-		return View::make('Maid.editform', $param);
+		if($param['maid']->user->id != $user->id)
+		{
+			throw new AccessDenied;
+			
+		}
+
+		return View::make('Maid.edit', $param);
 	}
 
-	public function edit()
+	public function editOnSubmit($id)
 	{
 		$user = User::getCurrentUser();
 
-		$maid = Maid::findOrFail(Input::get('id'));
+		$maid = Maid::findOrFail($id);
+
+		if($maid->user->id != $user->id)
+		{
+			throw new AccessDenied;
+			
+		}
 
 		$maid->name = Input::get('name');
 

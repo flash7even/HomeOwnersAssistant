@@ -2,7 +2,7 @@
 
 class PaymentController extends BaseController{
 
-	public function index($month = -1, $year = -1)
+	public function details($month = -1, $year = -1)
 	{
 		if($month == -1)
 		{
@@ -15,7 +15,8 @@ class PaymentController extends BaseController{
 		}
 
 		$user = User::getCurrentUser();
-		$param['payments'] = Payment::where('month', '=', $month)->where('year', '=', $year)->get();
+		$param['payments'] = Payment::where('month', '=', $month)->where('year', '=', $year)->where('user_id', '=', $user->id)->get();
+		
 		$param['month'] = date("F", mktime(null, null, null, $month));
 		$param['year'] = $year;
 
@@ -37,23 +38,21 @@ class PaymentController extends BaseController{
 			$param['prev']['year']--;
 		}
 
-		return View::make('Payment.index', $param);
+		return View::make('Payment.details', $param);
 	}
 
-	public function form()
+	public function add($id = -1)
 	{
 		$user = User::getCurrentUser();
 
 		$param['renters'] = $user->renters;
-
 		
-		$param['id'] = Input::get('id');
+		$param['id'] = $id;
 		
-
-		return View::make('Payment.form', $param);
+		return View::make('Payment.add', $param);
 	}
 
-	public function add()
+	public function addOnSubmit()
 	{
 		$user = User::getCurrentUser();
 

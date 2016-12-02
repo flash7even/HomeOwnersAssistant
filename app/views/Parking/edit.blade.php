@@ -18,7 +18,6 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Flat ID</label>
-						<!--<input type="text" class="form-control" id="i0" name="flat">-->
 						<select class="form-control" name="flat">
 							@foreach($flats as $flat)
 								<option @if($flat->id == $parking->flat->id) selected @endif>{{$flat->id}}</option>

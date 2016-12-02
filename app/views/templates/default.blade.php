@@ -65,29 +65,37 @@
 	      				<?php
 	      					$menus = array(
 	      								array(
-	      									'url'	=> '/dashboard',
+	      									'url'	=> URL::route('dashboard'),
 	      									'text'	=> 'Dashboard'
 	      								),
 	      								array(
-	      									'url'	=>'/payment/all',
+	      									'url'	=> URL::route('paymentdetails'),
 	      									'text'	=>'Payment Details'
 	      								),
 	      								array(
-	      									'url'	=> '/renter/details',
+	      									'url'	=> URL::route('renterdetails'),
 	      									'text'	=> 'Renter Details'
 	      								),
 	      								array(
-	      									'url'	=> '/flat/details',
+	      									'url'	=> URL::route('flatdetails'),
 	      									'text'	=> 'Flat Details'
 	      								),
 	      								array(
-	      									'url'	=>'/parking/details',
-	      									'text'	=>'Parking Details'
+	      									'url'	=> URL::route('parkingdetails'),
+	      									'text'	=> 'Parking Details'
+	      								),
+	      								array(
+	      									'url'	=> URL::route('maiddetails'),
+	      									'text'	=> 'Maid Details'
+	      								),
+	      								array(
+	      									'url'	=> URL::route('logout'),
+	      									'text'	=> '<b>Log Out</b>'
 	      								)
 	      							)
 	      				?>
 	      				@foreach($menus as $menu)
-	      					<li @if(('/'.Request::path()) == $menu['url']) class="active" @endif ><a href="{{$menu['url']}}" >{{$menu['text']}}</a></li>
+	      					<li @if((Request::url()) == $menu['url']) class="active" @endif ><a href="{{$menu['url']}}" >{{$menu['text']}}</a></li>
 	      				@endforeach
 	        		</ul>
         		</div>

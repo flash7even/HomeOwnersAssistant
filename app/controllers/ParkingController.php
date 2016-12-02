@@ -15,10 +15,10 @@ class ParkingController extends BaseController{
 			$param['parkings'] = array( Parking::findOrFail($id) );
 		}
 
-		return View::make('Parking.index', $param);
+		return View::make('Parking.details', $param);
 	}
 
-	public function form()
+	public function add()
 	{
 		$user = User::getCurrentUser();
 
@@ -26,10 +26,10 @@ class ParkingController extends BaseController{
 
 		$param['renters'] = $user->renters;
 
-		return View::make('Parking.form', $param);
+		return View::make('Parking.add', $param);
 	}
 
-	public function add()
+	public function addOnSubmit()
 	{
 		$user = User::getCurrentUser();
 
@@ -60,7 +60,7 @@ class ParkingController extends BaseController{
 		return View::make('Success.success');
 	}
 
-	public function editform($id)
+	public function edit($id)
 	{
 		$user = User::getCurrentUser();
 
@@ -77,11 +77,11 @@ class ParkingController extends BaseController{
 
 		$param['parking'] = $parking;
 
-		return View::make('Parking.editform', $param);
+		return View::make('Parking.edit', $param);
 		
 	}
 
-	public function edit($id)
+	public function editOnSubmit($id)
 	{
 		$user = User::getCurrentUser();
 

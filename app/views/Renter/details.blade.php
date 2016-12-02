@@ -22,15 +22,15 @@
 				@endif
 
 				@if($renter->parking->count() > 0)
-					<h4>Car Name: {{$renter->parking->first()->carname}} <small><a href="parking?id={{$renter->parking->first()->id}}">Details</a></small></h4>
+					<h4>Car Name: {{$renter->parking->first()->carname}} <small><a href="{{URL::route('parkingdetails', $renter->parking->first()->id)}}">Details</a></small></h4>
 				@endif
 
 				@if($renter->maids->count() > 0)
-					<h4>Maid Name: {{$renter->maids->first()->name}} <small><a href="maid?id={{$renter->maids->first()->id}}">Details</a></small></h4>
+					<h4>Maid Name: {{$renter->maids->first()->name}} <small><a href="{{URL::route('maiddetails', $renter->maids->first()->id)}}">Details</a></small></h4>
 				@endif
 				<hr>
 
-				<h4 style="display: inline">Paid For Current Month: <b>{{$renter->hasPaid()?$renter->hasPaid():"No"}}</b></h4> &bull; <a href="/payment/new?id={{$renter->id}}"><button class="btn btn-raised">Add Payment</button></a>
+				<h4 style="display: inline">Paid For Current Month: <b>{{$renter->hasPaid()?$renter->hasPaid():"No"}}</b></h4> &bull; <a href="{{URL::route('paymentadd', $renter->id)}}"><button class="btn btn-raised">Add Payment</button></a>
 				
 			</div>
 
