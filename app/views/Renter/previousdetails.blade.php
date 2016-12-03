@@ -40,6 +40,10 @@
 								<td>Arrival Date</td>
 								<td>{{$renter->arrival}}</td>
 							</tr>
+							<tr>
+								<td>Departure Date</td>
+								<td>{{$renter->departure}}</td>
+							</tr>
 					</tbody>
 				</table>
 			</div>
