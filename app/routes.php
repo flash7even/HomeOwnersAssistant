@@ -49,7 +49,9 @@ Route::post('flat/edit/{id}', array('as' => 'flateditsubmit', 'uses' => 'FlatCon
  |--------------------------------------------------------------------------
  */
 
- Route::get('renter/details/{id?}', array('as' => 'renterdetails', 'uses' => 'RenterController@details'));
+ Route::get('renter/current/details/{id?}', array('as' => 'renterdetails', 'uses' => 'RenterController@details'));
+
+ Route::get('renter/old/details/{id?}', array('as' => 'oldrenterdetails', 'uses' => 'RenterController@previousdetails'));
 
  Route::get('renter/new', array('as' => 'renteradd', 'uses' => 'RenterController@add'));
 
@@ -60,6 +62,7 @@ Route::post('flat/edit/{id}', array('as' => 'flateditsubmit', 'uses' => 'FlatCon
  Route::post('renter/edit/{id}', array('as' =>'rentereditsubmit', 'uses' => 'RenterController@editOnSubmit'));
 
  Route::get('renter/edit/{id}/left', array('as' => 'renterleft', 'uses' => 'RenterController@left'));
+
 
 /*
  |--------------------------------------------------------------------------

@@ -8,15 +8,43 @@ class RenterController extends BaseController{
 		$user = User::getCurrentUser();
 
 		$param = array();
-		$param['currentrenters'] = $user->renters()->where('departure', '=', '0000-00-00')->get();
+		$param['currentrenters'] = $user->renters()->get();
 
 		if($id != -1)
 		{
 			$param['currentrenters'] = array(Renter::findOrFail($id));
+
+			if($param['currentrenters'][0]->user->id != $user->id)
+			{
+				throw new AccessDenied;
+			}
 		}
 
 
 		return View::make('Renter.details', $param);
+	}
+
+	public function previousdetails($id = -1)
+	{
+		$user = User::getCurrentUser();
+
+		$param = array();
+
+		$param['currentrenters'] = $user->previousrenters()->get();
+
+		if($id != -1)
+		{
+			$param['currentrenters'] = array(Renter::findOrFail($id));
+			
+			if($param['currentrenters'][0]->user->id != $user->id)
+			{
+				throw new AccessDenied;
+			}
+		}
+
+
+		return View::make('Renter.previousdetails', $param);
+
 	}
 
 	public function add()
@@ -129,9 +157,41 @@ class RenterController extends BaseController{
 			throw new AccessDenied;
 		}
 
-		$renter->departure = date('Y-m-d');
+		$previousrenter = new Previousrenter;
 
-		$renter->save();
+		$previousrenter->name = $renter->name;
+		$previousrenter->gender = $renter->gender;
+		$previousrenter->age = $renter->age;
+		$previousrenter->profession = $renter->profession;
+		$previousrenter->email = $renter->email;
+		$previousrenter->contact = $renter->contact;
+		$previousrenter->nid = $renter->nid;
+		$previousrenter->arrival = $renter->arrival;
+		$previousrenter->user()->associate($user);
+		$previousrenter->departure = Date('Y-m-d');
+
+		foreach ($renter->maids as $maid)
+		{
+			$renter->maids()->detach($maid);
+			$maid->delete();
+		}
+
+		foreach($renter->parking as $parking)
+		{
+			$parking->delete();
+		}
+
+		foreach($renter->payments as $payment)
+		{
+			$payment->delete();
+		}
+
+		$renter->flats()->detach($renter->flat);
+
+
+		$renter->delete();
+
+		$previousrenter->save();
 
 		return View::make('Success.success');
 	}

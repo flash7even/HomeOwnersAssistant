@@ -11,6 +11,11 @@ class User extends Eloquent{
 		return $this->hasMany('Renter');
 	}
 
+	public function previousrenters()
+	{
+		return $this->hasMany('Previousrenter');
+	}
+
 	public function parkings()
 	{
 		return $this->hasMany('Parking');

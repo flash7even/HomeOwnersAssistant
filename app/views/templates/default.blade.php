@@ -89,6 +89,10 @@
 	      									'text'	=> 'Maid Details'
 	      								),
 	      								array(
+	      									'url'	=> URL::route('oldrenterdetails'),
+	      									'text'	=> 'Previous Renters'
+	      								),
+	      								array(
 	      									'url'	=> URL::route('logout'),
 	      									'text'	=> '<b>Log Out</b>'
 	      								)
