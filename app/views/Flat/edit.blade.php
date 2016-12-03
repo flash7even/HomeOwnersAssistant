@@ -15,22 +15,22 @@
 
 				<div class="form-group label-floating">
 					<label for="i0" class="control-label">Name</label>
-					<input type="text" class="form-control" id="i0" name="name" value="{{$flat->name}}">
+					<input type="text" class="form-control" id="i0" name="name" value="{{$flat->name}}" required>
 				</div>
 
 				<div class="form-group label-floating">
 					<label for="i0" class="control-label">Rent</label>
-					<input type="text" class="form-control" id="i0" name="rent" value="{{$flat->rent}}">
+					<input type="text" class="form-control" id="i0" name="rent" value="{{$flat->rent}}" required>
 				</div>
 
 				<div class="form-group label-floating">
 					<label for="i0" class="control-label">Number of Rooms</label>
-					<input type="text" class="form-control" id="i0" name="cntrooms" value="{{$flat->cntrooms}}">
+					<input type="text" class="form-control" id="i0" name="cntrooms" value="{{$flat->cntrooms}}" required>
 				</div>
 
 				<div class="form-group label-floating">
 					<label for="i0" class="control-label">Number of Washrooms</label>
-					<input type="text" class="form-control" id="i0" name="cntwashrooms" value="{{$flat->cntwashrooms}}">
+					<input type="text" class="form-control" id="i0" name="cntwashrooms" value="{{$flat->cntwashrooms}}" required>
 				</div>
 
 				<div class="form-group label-floating">

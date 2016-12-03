@@ -13,7 +13,7 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Name</label>
-						<input type="text" class="form-control" id="i0" name="name" value="{{$maid->name}}">
+						<input type="text" class="form-control" id="i0" name="name" value="{{$maid->name}}" required>
 					</div>
 
 					<div class="form-group label-floating">
@@ -27,7 +27,7 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">NID</label>
-						<input type="text" class="form-control" id="i0" name="nid" value="{{$maid->nid}}">
+						<input type="text" class="form-control" id="i0" name="nid" value="{{$maid->nid}}" required>
 					</div>
 				</div>
 				<br>

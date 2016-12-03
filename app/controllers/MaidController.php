@@ -46,9 +46,9 @@ class MaidController extends BaseController{
 
 		$renter = Renter::findOrFail(Input::get('renter'));
 
-		$maid->renters()->detach();
+		//$maid->renters()->detach();
 
-		$renter->maids()->detach();
+		//$renter->maids()->detach();
 
 		$maid->renters()->save($renter);
 

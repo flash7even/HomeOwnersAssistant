@@ -14,32 +14,35 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Name</label>
-						<input type="text" class="form-control" id="i0" name="name">
+						<input type="text" class="form-control" id="i0" name="name" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Gender</label>
-						<input type="text" class="form-control" id="i0" name="gender">
+						<select name="gender" class="form-control">
+							<option>Male</option>
+							<option>Female</option>
+						</select>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Age</label>
-						<input type="text" class="form-control" id="i0" name="age">
+						<input type="text" class="form-control" id="i0" name="age" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Profession</label>
-						<input type="text" class="form-control" id="i0" name="profession">
+						<input type="text" class="form-control" id="i0" name="profession" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Email</label>
-						<input type="email" class="form-control" id="i0" name="email">
+						<input type="email" class="form-control" id="i0" name="email" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Contact</label>
-						<input type="text" class="form-control" id="i0" name="contact">
+						<input type="text" class="form-control" id="i0" name="contact" required>
 					</div>
 
 					<div class="form-group label-floating">
@@ -58,7 +61,7 @@
 
 					<div class="form-group label-static">
 						<label for="i0" class="control-label">Arrival Date</label>
-						<input type="date" class="form-control" id="i0" name="arrival">
+						<input type="date" class="form-control" id="i0" name="arrival" required>
 					</div>
 				</div>
 				<br>

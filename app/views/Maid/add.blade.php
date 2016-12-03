@@ -13,7 +13,7 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Name</label>
-						<input type="text" class="form-control" id="i0" name="name">
+						<input type="text" class="form-control" id="i0" name="name" required>
 					</div>
 
 					<div class="form-group label-floating">
@@ -27,7 +27,7 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">NID</label>
-						<input type="text" class="form-control" id="i0" name="nid">
+						<input type="text" class="form-control" id="i0" name="nid" required>
 					</div>
 				</div>
 				<br>

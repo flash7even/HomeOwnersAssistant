@@ -15,32 +15,35 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Name</label>
-						<input type="text" class="form-control" id="i0" name="name" value="{{$renter->name}}">
+						<input type="text" class="form-control" id="i0" name="name" value="{{$renter->name}}" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Gender</label>
-						<input type="text" class="form-control" id="i0" name="gender" value="{{$renter->gender}}">
+						<select name="gender" class="form-control">
+							<option @if($renter->gender == 'Male') selected @endif>Male</option>
+							<option @if($renter->gender == 'Female') selected @endif>Female</option>
+						</select>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Age</label>
-						<input type="text" class="form-control" id="i0" name="age" value="{{$renter->age}}">
+						<input type="text" class="form-control" id="i0" name="age" value="{{$renter->age}}" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Profession</label>
-						<input type="text" class="form-control" id="i0" name="profession" value="{{$renter->profession}}">
+						<input type="text" class="form-control" id="i0" name="profession" value="{{$renter->profession}}" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Email</label>
-						<input type="email" class="form-control" id="i0" name="email" value="{{$renter->email}}">
+						<input type="email" class="form-control" id="i0" name="email" value="{{$renter->email}}" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Contact</label>
-						<input type="text" class="form-control" id="i0" name="contact" value="{{$renter->contact}}">
+						<input type="text" class="form-control" id="i0" name="contact" value="{{$renter->contact}}" required>
 					</div>
 
 					<div class="form-group label-floating">
@@ -59,7 +62,7 @@
 
 					<div class="form-group label-static">
 						<label for="i0" class="control-label">Arrival Date</label>
-						<input type="date" class="form-control" id="i0" name="arrival">
+						<input type="date" class="form-control" id="i0" name="arrival" required>
 					</div>
 				</div>
 				<br>

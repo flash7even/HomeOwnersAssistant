@@ -14,22 +14,22 @@
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Name</label>
-						<input type="text" class="form-control" id="i0" name="name">
+						<input type="text" class="form-control" id="i0" name="name" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Rent</label>
-						<input type="text" class="form-control" id="i0" name="rent">
+						<input type="text" class="form-control" id="i0" name="rent" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Number of Rooms</label>
-						<input type="text" class="form-control" id="i0" name="cntrooms">
+						<input type="text" class="form-control" id="i0" name="cntrooms" required>
 					</div>
 
 					<div class="form-group label-floating">
 						<label for="i0" class="control-label">Number of Washrooms</label>
-						<input type="text" class="form-control" id="i0" name="cntwashrooms">
+						<input type="text" class="form-control" id="i0" name="cntwashrooms" required>
 					</div>
 
 					<div class="form-group label-floating">
